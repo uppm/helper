@@ -17,35 +17,48 @@ class Str {
             $out = str_replace($stringToReplace, $replaceWith,$this->string);
         }
 
-        return $out;
+        $this->string = $out;
+        return $this;
     }
 
     public function append($string) {
         $this->string .= $string;
-        return $this->string;
+        return $this;
     }
 
-    public static function contains($val, $string) {
-        return strpos($string, $val) !== false;
-    }
+    
 
     public function appendNewLine($string) {
         $this->string .= "\n".$string;
-        return $this->string;
+        return $this;
     }
 
     public function clear() {
         $this->string = "";
+        return $this;
     }
 
     public function getString() {
         return $this->string;
     }
 
-    public function writeFile($path) {
-        return \file_put_contents($path, $this->string);
+    public function contains($val) {
+        return strpos($this->string, $val) !== false;
     }
 
+    public function writeFile($path) {
+        $this->string =  \file_put_contents($path, $this->string);
+        return $this;
+    }
+
+    public function trim(){
+        $this->string = trim($this->string);
+        return $this;
+    }
+
+    public function __toString(){
+        return $this->string;
+    }
     public static function random($length = 10, $characters = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ') {
         $charactersLength = strlen($characters);
         $randomString = '';
@@ -54,4 +67,12 @@ class Str {
         }
         return $randomString;
     } 
+
+    public static function of($string) : Str {
+        return new Str($string);
+    }
+
+    public static function containsValue($val, $string) {
+        return strpos($string, $val) !== false;
+    }
 }
