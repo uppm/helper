@@ -1,0 +1,14 @@
+{
+    "name": "ulole-helper",
+    "version": "1.0.3",
+    "description": "",
+    "author": "",
+    "keywords": [
+        ""
+    ],
+    "modules": {},
+    "namespaces": {},
+    "namespace_bindings": {
+    	"de\\interaapps\\ulole\\helper": "de/interaapps/ulole/helper"
+    }
+}

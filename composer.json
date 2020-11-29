@@ -1,0 +1,21 @@
+{
+    "name": "interaapps/helper",
+    "type": "library",
+    "description": "helpers",
+    "version": "1.0.3",
+    "authors": [
+        {
+            "name": "JulianFun123",
+            "email": "julianfun123@yahoo.com"
+        }
+    ],
+    "require": {
+    	"php": ">=7.4",
+        "ext-openssl": "*"
+    },
+    "autoload": {
+        "psr-4": {
+            "de\\interaapps\\ulole\\helper\\": "de/interaapps/ulole/helper"
+        }
+    }
+}
